@@ -7,4 +7,3 @@ This is my personal portfolio website showcasing my projects and skills.
 
 ## Live Demo
 [View Portfolio](https://HimC29.github.io/HimC29-Portfolio)
-# HimC29-Portfolio
