@@ -161,42 +161,62 @@ body::-webkit-scrollbar {
   color: var(--accent);
 }
   
-/* -------- Hero -------- */
-.hero {
-  min-height: 100vh;
+/* -------- Main Layout (Hero Left + Content Right) -------- */
+.main-layout {
+  display: flex;
+  gap: 3rem;
+  min-height: calc(100vh - 70px);
+  margin-top: 70px;
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 var(--spacing-xl);
+}
+
+.hero-aside {
+  flex: 0 0 360px;
+  padding: var(--spacing-lg) 0 var(--spacing-lg) var(--spacing-lg);
+  margin-top: 10vh;
+  margin-left: 0;
+  position: sticky;
+  top: 70px;
+  align-self: flex-start;
+  max-height: calc(100vh - 70px);
+  overflow-y: auto;
+}
+
+.hero-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  box-shadow: var(--shadow-lg);
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: var(--spacing-lg);
-  padding-top: calc(70px + var(--spacing-lg));
-  background:
-    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(34, 211, 238, 0.3), transparent),
-    var(--bg-dark);
 }
 
-.hero #githubAvatar {
-  width: 10rem;
-  height: 10rem;
+.hero-card #githubAvatar {
+  width: 9rem;
+  height: 9rem;
   border-radius: var(--radius-full);
   object-fit: cover;
   border: 3px solid var(--border);
-  box-shadow: var(--shadow-lg), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  box-shadow: var(--shadow-md);
   margin-bottom: var(--spacing-md);
   transition: border-color 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out), transform 0.3s var(--ease-out);
 }
 
-.hero #githubAvatar:hover {
+.hero-card #githubAvatar:hover {
   border-color: var(--accent);
-  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  box-shadow: var(--shadow-glow);
   transform: scale(1.02);
 }
 
-.hero h1 {
+.hero-card h1 {
   font-family: var(--font-bold-italic);
-  font-size: clamp(2.25rem, 6vw, 4rem);
-  color: var(--text-light);
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
   letter-spacing: -0.02em;
   margin-bottom: var(--spacing-xs);
   background: linear-gradient(135deg, var(--text-light) 0%, var(--accent) 100%);
@@ -206,11 +226,11 @@ body::-webkit-scrollbar {
 }
 
 .hero-tagline {
-  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
   color: var(--accent);
   font-weight: 600;
   margin: 0 auto var(--spacing-xs);
-  min-height: 2em;
+  min-height: 1.75em;
 }
 
 .cursor-blink {
@@ -223,11 +243,32 @@ body::-webkit-scrollbar {
 }
 
 .hero-subtitle {
-  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  font-size: 0.95rem;
   color: var(--text-muted);
-  max-width: 28em;
   margin: 0 auto var(--spacing-lg);
-  line-height: 1.65;
+  line-height: 1.5;
+}
+
+.hero-card .links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  width: 100%;
+}
+
+.hero-card .link-btn {
+  justify-content: center;
+  white-space: nowrap;
+}
+
+/* -------- Main Content (Scrollable Right) -------- */
+.main-content {
+  flex: 1;
+  min-width: 0;
+  max-width: 720px;
+  padding: var(--spacing-lg) var(--spacing-md) var(--spacing-lg) var(--spacing-sm);
 }
   
   /* -------- Link buttons -------- */
@@ -235,28 +276,26 @@ body::-webkit-scrollbar {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-lg);
+  }
+
+  .hero-card .links {
+    flex-wrap: nowrap;
   }
   
   .link-btn {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 0.65rem 1.25rem;
-    border-radius: var(--radius-md);
-    border: 1px solid var(--border);
-    background: var(--card-bg);
     color: var(--text-light);
-    font-size: 0.95rem;
-    font-weight: 600;
     text-decoration: none;
     transition: border-color 0.25s var(--ease-out), background 0.25s var(--ease-out),
       color 0.25s var(--ease-out), transform 0.2s var(--ease-out), box-shadow 0.25s var(--ease-out);
   }
   
   .link-btn img {
-    width: 1.15rem;
-    height: 1.15rem;
+    width: 1.5rem;
+    height: 1.5rem;
     flex-shrink: 0;
     filter: invert(1);
     opacity: 0.9;
@@ -337,11 +376,14 @@ body::-webkit-scrollbar {
 .github-stats {
   margin-top: var(--spacing-xl);
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md);
 }
 
 .github-stats img {
-  max-width: 100%;
+  max-width: 125%;
   height: auto;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
@@ -350,7 +392,7 @@ body::-webkit-scrollbar {
 /* -------- Projects -------- */
 .projects {
   padding: var(--spacing-xl) var(--spacing-lg);
-  background: var(--bg-darker);
+  border-top: 1px solid var(--border);
 }
   
   .projects h2 {
@@ -497,6 +539,42 @@ body::-webkit-scrollbar {
 }
   
 /* -------- Responsive tweaks -------- */
+@media (max-width: 992px) {
+  /* Mobile: Stack hero above content */
+  .main-layout {
+    flex-direction: column;
+    align-content: center;
+    margin-top: 70px;
+  }
+
+  .hero-aside {
+    margin-left: auto;
+    margin-right: auto;
+    flex: none;
+    position: static;
+    padding: var(--spacing-md);
+    max-height: none;
+    width: 100%;
+    max-width: 420px;
+  }
+
+  .hero-card {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .hero-card .links {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+  }
+
+  .main-content {
+    padding: var(--spacing-md);
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   .nav-container {
     padding: 0 var(--spacing-sm);
@@ -510,38 +588,113 @@ body::-webkit-scrollbar {
     font-size: 0.9rem;
   }
 
+  .hero-aside {
+    padding: var(--spacing-sm);
+  }
+
+  .hero-card {
+    padding: var(--spacing-lg);
+  }
+
+  .hero-card #githubAvatar {
+    width: 7rem;
+    height: 7rem;
+  }
+
+  .skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
   .skills-grid {
-    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-    gap: var(--spacing-sm);
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    max-width: 360px;
+    margin: 0 auto;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  .skill-item {
+    width: 100%;
+    max-width: 140px;
+    margin: 0 auto;
+  }
+  
+  .github-stats {
+    width: 100%;
+    max-width: 100%;
+    overflow: visible;
+  }
+
+  .github-stats img {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    transform: scale(1.35);
+    transform-origin: center top;
   }
 }
 
 @media (max-width: 640px) {
-  .hero {
-    padding-top: calc(70px + var(--spacing-md));
-    padding-bottom: var(--spacing-xl);
+  .main-content {
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  .hero #githubAvatar {
-    width: 8rem;
-    height: 8rem;
+  .skills,
+  .skills h2,
+  .github-stats {
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
   }
 
-  .links {
+  .hero-card .links {
     gap: var(--spacing-xs);
   }
 
-  .link-btn {
-    padding: 0.6rem 1rem;
+  .hero-card .link-btn {
+    padding: 0.5rem 0.75rem;
     font-size: 0.9rem;
+  }
+
+  .hero-card .link-btn img {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .projects {
+    padding-left: var(--spacing-xs);
+    padding-right: var(--spacing-xs);
   }
 
   .grid {
     grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .card {
+    width: 100%;
+    max-width: none;
   }
 
   .card-image {
-    height: 160px;
+    width: 100%;
+    height: 140px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .card-content {
+    padding: var(--spacing-lg);
   }
 }
   

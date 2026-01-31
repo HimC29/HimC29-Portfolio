@@ -1,10 +1,15 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Him C. Portfolio</title>
-		<link rel="icon" type="image/png" sizes="32x32" href="https://github.com/HimC29.png?size=32">
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="https://github.com/HimC29.png?size=32"
+        />
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
@@ -20,200 +25,285 @@
             </div>
         </nav>
 
-        <!-- Hero Section -->
-        <section id="home" class="hero">
-			<img id="githubAvatar" src="https://github.com/HimC29.png" alt="GitHub avatar">
-            <h1>Him C.</h1>
-            <p class="hero-tagline">
-                <span id="typedText"></span><span class="cursor-blink">|</span>
-            </p>
-            <p class="hero-subtitle">
-                Self-taught Programmer from Malaysia
-            </p>
-            <div class="links">
-                <a
-                    href="https://github.com/HimC29"
-                    class="link-btn github"
-                    target="_blank"
-                >
+        <!-- Main Layout: Hero (left) + Content (right) -->
+        <div class="main-layout">
+            <!-- Hero Card - Fixed on left (desktop) -->
+            <aside id="home" class="hero-aside">
+                <div class="hero-card">
                     <img
-                        src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg"
-                        alt="GitHub"
+                        id="githubAvatar"
+                        src="https://github.com/HimC29.png"
+                        alt="GitHub avatar"
                     />
-                    GitHub
-                </a>
-
-                <a
-                    href="mailto:himc.29z@gmail.com"
-                    class="link-btn email"
-                    target="_blank"
-                >
-                    <img
-                        src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg"
-                        alt="Email"
-                    />
-                    Email
-                </a>
-
-                <a
-                    href="https://www.tiktok.com/@HimC29"
-                    class="link-btn tiktok"
-                    target="_blank"
-                >
-                    <img
-                        src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg"
-                        alt="TikTok"
-                    />
-                    TikTok
-                </a>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="skills fade-in">
-            <h2>Skills & Technologies</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linux.svg" alt="Linux">
-                    <span>Linux</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/html5.svg" alt="HTML5">
-                    <span>HTML</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/css3.svg" alt="CSS3">
-                    <span>CSS</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/javascript.svg" alt="JavaScript">
-                    <span>JavaScript</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/react.svg" alt="React">
-                    <span>React</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/bootstrap.svg" alt="Bootstrap">
-                    <span>Bootstrap</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/express.svg" alt="Express.js">
-                    <span>Express.js</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/nodedotjs.svg" alt="Node.js">
-                    <span>Node.js</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mongodb.svg" alt="MongoDB">
-                    <span>MongoDB</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/python.svg" alt="Python">
-                    <span>Python</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/arduino.svg" alt="Arduino">
-                    <span>Arduino</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/markdown.svg" alt="Markdown">
-                    <span>Markdown</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/git.svg" alt="Git">
-                    <span>Git</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub">
-                    <span>GitHub</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/visualstudiocode.svg" alt="VS Code">
-                    <span>VS Code</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/postman.svg" alt="Postman">
-                    <span>Postman</span>
-                </div>
-                <div class="skill-item">
-                    <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gnubash.svg" alt="Bash">
-                    <span>Bash</span>
-                </div>
-            </div>
-            
-            <!-- GitHub Stats -->
-            <div class="github-stats">
-                <img src="https://github-readme-stats.vercel.app/api?username=HimC29&show_icons=true&theme=radical&hide_border=true&bg_color=0a0b0d&title_color=22d3ee&icon_color=22d3ee&text_color=f0f2f5" alt="GitHub Stats">
-            </div>
-        </section>
-
-        <!-- Projects Section -->
-        <section id="projects" class="projects fade-in">
-            <h2>Projects</h2>
-            <div class="grid">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://opengraph.githubassets.com/1/HimC29/hcOS" alt="hc!OS">
-                    </div>
-                    <div class="card-content">
-                        <h3>hc!OS</h3>
-                        <p>Web-based desktop environment built with JavaScript.</p>
-                        <a href="https://github.com/HimC29/hcOS">View on GitHub</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://opengraph.githubassets.com/1/HimC29/URL-Shortener" alt="URL Shortener">
-                    </div>
-                    <div class="card-content">
-                        <h3>URL Shortener</h3>
-                        <p>
-                            Full-stack URL shortening service using Express.js +
-                            MongoDB.
-                        </p>
-                        <a href="https://github.com/HimC29/URL-Shortener">
-                            View on GitHub
+                    <h1>Him C.</h1>
+                    <p class="hero-tagline">
+                        <span id="typedText"></span
+                        ><span class="cursor-blink">|</span>
+                    </p>
+                    <p class="hero-subtitle">
+                        Self-taught Programmer from Malaysia
+                    </p>
+                    <div class="links">
+                        <a
+                            href="https://github.com/HimC29"
+                            class="link-btn github"
+                            target="_blank"
+                        >
+                            <img
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg"
+                                alt="GitHub"
+                            />
+                        </a>
+                        <a
+                            href="mailto:himc.29z@gmail.com"
+                            class="link-btn email"
+                            target="_blank"
+                        >
+                            <img
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg"
+                                alt="Email"
+                            />
+                        </a>
+                        <a
+                            href="https://www.tiktok.com/@HimC29"
+                            class="link-btn tiktok"
+                            target="_blank"
+                        >
+                            <img
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg"
+                                alt="TikTok"
+                            />
                         </a>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://opengraph.githubassets.com/1/HimC29/Arduino-Boombox" alt="Arduino Boombox">
-                    </div>
-                    <div class="card-content">
-                        <h3>Arduino Boombox</h3>
-                        <p>
-                            Music-playing Arduino project with multiple components.
-                        </p>
-                        <a href="https://github.com/HimC29/Arduino-Boombox">
-                            View on GitHub
-                        </a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-image">
-                        <img src="https://opengraph.githubassets.com/1/HimC29/camera-to-ascii-color" alt="Camera to ASCII Color">
-                    </div>
-                    <div class="card-content">
-                        <h3>Camera to ASCII Color</h3>
-                        <p>
-                            Real-time webcam rendered as colored ASCII in terminal.
-                        </p>
-                        <a href="https://github.com/HimC29/camera-to-ascii-color">
-                            View on GitHub
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
+            </aside>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <p>© 2026 Him C. | <a href="LICENSE" target="_blank">MIT License</a></p>
-        </footer>
-        
+            <!-- Scrollable Content -->
+            <main class="main-content">
+                <!-- Skills Section -->
+                <section id="skills" class="skills fade-in">
+                    <h2>Skills & Technologies</h2>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <img
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linux.svg"
+                                alt="Linux"
+                            />
+                            <span>Linux</span>
+                        </div>
+                        <div class="skill-item">
+                            <img
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/html5.svg"
+                                alt="HTML5"
+                            />
+                            <span>HTML</span>
+                        </div>
+                        <div class="skill-item">
+                            <img
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/css3.svg"
+                                alt="CSS3"
+                            />
+                            <span>CSS</span>
+                        </div>
+                        <div class="skill-item">
+                            <img
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/javascript.svg"
+                                alt="JavaScript"
+                            />
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <img
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/react.svg"
+                                alt="React"
+                            />
+                            <span>React</span>
+                        </div>
+                        <div class="skill-item">
+                            <img
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/bootstrap.svg"
+                                alt="Bootstrap"
+                            />
+                            <span>Bootstrap</span>
+                        </div>
+                        <div class="skill-item">
+                            <img
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/express.svg"
+                                alt="Express.js"
+                            />
+                            <span>Express.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <img
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/nodedotjs.svg"
+                                alt="Node.js"
+                            />
+                            <span>Node.js</span>
+                        </div>
+                        <div class="skill-item">
+                            <img
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/mongodb.svg"
+                                alt="MongoDB"
+                            />
+                            <span>MongoDB</span>
+                        </div>
+                        <div class="skill-item">
+                            <img
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/python.svg"
+                                alt="Python"
+                            />
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <img
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/arduino.svg"
+                                alt="Arduino"
+                            />
+                            <span>Arduino</span>
+                        </div>
+                        <div class="skill-item">
+                            <img
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/markdown.svg"
+                                alt="Markdown"
+                            />
+                            <span>Markdown</span>
+                        </div>
+                        <div class="skill-item">
+                            <img
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/git.svg"
+                                alt="Git"
+                            />
+                            <span>Git</span>
+                        </div>
+                        <div class="skill-item">
+                            <img
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg"
+                                alt="GitHub"
+                            />
+                            <span>GitHub</span>
+                        </div>
+                        <div class="skill-item">
+                            <img
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/visualstudiocode.svg"
+                                alt="Code"
+                            />
+                            <span>Code</span>
+                        </div>
+                        <div class="skill-item">
+                            <img
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/postman.svg"
+                                alt="Postman"
+                            />
+                            <span>Postman</span>
+                        </div>
+                        <div class="skill-item">
+                            <img
+                                src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gnubash.svg"
+                                alt="Bash"
+                            />
+                            <span>Bash</span>
+                        </div>
+                    </div>
+
+                    <!-- GitHub Stats -->
+                    <div class="github-stats"></div>
+                </section>
+
+                <!-- Projects Section -->
+                <section id="projects" class="projects fade-in">
+                    <h2>Projects</h2>
+                    <div class="grid">
+                        <div class="card">
+                            <div class="card-image">
+                                <img
+                                    src="https://opengraph.githubassets.com/1/HimC29/hcOS"
+                                    alt="hc!OS"
+                                />
+                            </div>
+                            <div class="card-content">
+                                <h3>hc!OS</h3>
+                                <p>
+                                    Web-based desktop environment built with
+                                    JavaScript.
+                                </p>
+                                <a href="https://github.com/HimC29/hcOS"
+                                    >View on GitHub</a
+                                >
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image">
+                                <img
+                                    src="https://opengraph.githubassets.com/1/HimC29/URL-Shortener"
+                                    alt="URL Shortener"
+                                />
+                            </div>
+                            <div class="card-content">
+                                <h3>URL Shortener</h3>
+                                <p>
+                                    Full-stack URL shortening service using
+                                    Express.js + MongoDB.
+                                </p>
+                                <a
+                                    href="https://github.com/HimC29/URL-Shortener"
+                                >
+                                    View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image">
+                                <img
+                                    src="https://opengraph.githubassets.com/1/HimC29/Arduino-Boombox"
+                                    alt="Arduino Boombox"
+                                />
+                            </div>
+                            <div class="card-content">
+                                <h3>Arduino Boombox</h3>
+                                <p>
+                                    Music-playing Arduino project with multiple
+                                    components.
+                                </p>
+                                <a
+                                    href="https://github.com/HimC29/Arduino-Boombox"
+                                >
+                                    View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image">
+                                <img
+                                    src="https://opengraph.githubassets.com/1/HimC29/camera-to-ascii-color"
+                                    alt="Camera to ASCII Color"
+                                />
+                            </div>
+                            <div class="card-content">
+                                <h3>Camera to ASCII Color</h3>
+                                <p>
+                                    Real-time webcam rendered as colored ASCII
+                                    in terminal.
+                                </p>
+                                <a
+                                    href="https://github.com/HimC29/camera-to-ascii-color"
+                                >
+                                    View on GitHub
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Footer -->
+                <footer class="footer">
+                    <p>
+                        © 2026 Him C. |
+                        <a href="LICENSE" target="_blank">MIT License</a>
+                    </p>
+                </footer>
+            </main>
+        </div>
+
         <script src="script.js"></script>
     </body>
 </html>
