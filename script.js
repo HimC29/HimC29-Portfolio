@@ -60,6 +60,19 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // ==========================================
+// Always start at top on load / refresh, no hash in URL
+// ==========================================
+
+history.scrollRestoration = "manual";
+
+window.addEventListener("load", () => {
+    window.scrollTo(0, 0);
+    if (history.replaceState) {
+        history.replaceState(null, "", window.location.pathname + window.location.search);
+    }
+});
+
+// ==========================================
 // GitHub Stats
 // ==========================================
 
@@ -119,9 +132,25 @@ document.addEventListener("DOMContentLoaded", () => {
         link.addEventListener("click", (e) => {
             e.preventDefault();
             const targetId = link.getAttribute("href");
+            if (typeof targetId !== "string" || !targetId.startsWith("#")) return;
             const targetSection = document.querySelector(targetId);
-
             if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start",
+                });
+            }
+        });
+    });
+
+    // Scroll-down link and any other in-page # links: scroll without adding hash to URL
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", (e) => {
+            const targetId = link.getAttribute("href");
+            if (targetId === "#") return;
+            const targetSection = document.querySelector(targetId);
+            if (targetSection) {
+                e.preventDefault();
                 targetSection.scrollIntoView({
                     behavior: "smooth",
                     block: "start",

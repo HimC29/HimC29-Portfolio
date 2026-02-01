@@ -270,6 +270,69 @@ body::-webkit-scrollbar {
   max-width: 720px;
   padding: var(--spacing-lg) var(--spacing-md) var(--spacing-lg) var(--spacing-sm);
 }
+
+/* -------- Home Intro (right column, above Skills) -------- */
+.home-intro {
+  padding: 5rem var(--spacing-lg);
+  padding-bottom: var(--spacing-xl);
+  text-align: left;
+}
+
+.home-intro h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.home-intro h2 + h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600;
+  color: var(--text-light);
+  margin-bottom: 0;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-top: 0.15em;
+}
+
+.lightIntroText {
+  color: #ffffff;
+}
+
+.home-intro h2.darkIntroText {
+  color: #46484d;
+}
+
+.home-intro h2:last-of-type {
+  margin-bottom: var(--spacing-md);
+}
+
+.home-intro-text {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--spacing-lg);
+  max-width: 540px;
+}
+
+.home-intro-text strong, .home-intro-text b {
+  color: var(--text-light);
+}
+
+.scroll-down-link {
+  display: inline-block;
+  color: var(--accent-muted);
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s var(--ease-out);
+}
+
+.scroll-down-link:hover {
+  color: var(--accent);
+}
   
   /* -------- Link buttons -------- */
   .links {
@@ -540,38 +603,63 @@ body::-webkit-scrollbar {
   
 /* -------- Responsive tweaks -------- */
 @media (max-width: 992px) {
-  /* Mobile: Stack hero above content */
+  /* Stack: card on top, content below. Start below nav so card never overlaps header. */
   .main-layout {
     flex-direction: column;
-    align-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: calc(100vh - 70px);
     margin-top: 70px;
+    gap: var(--spacing-sm);
   }
 
   .hero-aside {
+    margin-top: 3rem;
     margin-left: auto;
     margin-right: auto;
     flex: none;
     position: static;
-    padding: var(--spacing-md);
+    padding: var(--spacing-sm) var(--spacing-md);
+    padding-bottom: var(--spacing-xs);
     max-height: none;
     width: 100%;
-    max-width: 420px;
+    max-width: min(560px, 92vw);
   }
 
   .hero-card {
-    max-width: 420px;
+    max-width: 100%;
     margin: 0 auto;
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+
+  .hero-card #githubAvatar {
+    width: 6.5rem;
+    height: 6.5rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .hero-card h1 {
+    margin-bottom: 0;
+  }
+
+  .hero-subtitle {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .main-content {
+    padding: var(--spacing-md);
+    padding-top: var(--spacing-sm);
+    max-width: 100%;
+  }
+
+  .home-intro {
+    padding-top: var(--spacing-sm);
   }
 
   .hero-card .links {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
-  }
-
-  .main-content {
-    padding: var(--spacing-md);
-    max-width: 100%;
   }
 }
 
@@ -610,7 +698,7 @@ body::-webkit-scrollbar {
 
   .skills-grid {
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    max-width: 360px;
+    max-width: 125%;
     margin: 0 auto;
     justify-content: center;
     justify-items: center;
