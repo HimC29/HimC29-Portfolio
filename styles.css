@@ -119,10 +119,6 @@ body::-webkit-scrollbar {
     transition: opacity 0.2s var(--ease-out);
 }
 
-.nav-logo:hover {
-    opacity: 0.8;
-}
-
 .nav-menu {
     display: flex;
     gap: var(--spacing-lg);
